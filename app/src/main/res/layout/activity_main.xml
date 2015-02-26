@@ -13,4 +13,5 @@
         android:layout_height="wrap_content"
         android:onClick="addFragment"
         android:text="Add fragment" />
+
 </LinearLayout>

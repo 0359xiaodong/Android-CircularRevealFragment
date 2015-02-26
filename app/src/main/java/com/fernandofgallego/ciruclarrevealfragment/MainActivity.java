@@ -16,7 +16,6 @@ import android.view.animation.DecelerateInterpolator;
 
 public class MainActivity extends Activity implements OnFragmentTouched
 {
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -51,6 +50,8 @@ public class MainActivity extends Activity implements OnFragmentTouched
 				@Override
 				public void onAnimationEnd(Animator animation)
 				{
+                    //in some cases the UI becomes visible briefly before removing the fragment, hide the layout
+                    theFragment.hideLayout();
 					// remove the fragment only when the animation finishes
 					getFragmentManager().beginTransaction().remove(theFragment).commit();
 				}
@@ -188,5 +189,10 @@ public class MainActivity extends Activity implements OnFragmentTouched
 			}
 			return radius;
 		}
+
+        public void hideLayout() {
+            if(getView() != null)
+                getView().setVisibility(View.GONE);
+        }
 	}
 }
