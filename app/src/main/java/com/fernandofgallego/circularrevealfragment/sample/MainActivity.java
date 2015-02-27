@@ -1,6 +1,4 @@
-package com.fernandofgallego.ciruclarrevealfragment;
-
-import com.fernandofgallego.circularrevealfragment.OnFragmentTouched;
+package com.fernandofgallego.circularrevealfragment.sample;
 
 import android.animation.Animator;
 import android.app.Activity;

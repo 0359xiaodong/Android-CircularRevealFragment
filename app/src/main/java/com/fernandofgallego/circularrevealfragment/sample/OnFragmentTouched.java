@@ -1,4 +1,4 @@
-package com.fernandofgallego.ciruclarrevealfragment;
+package com.fernandofgallego.circularrevealfragment.sample;
 
 import android.app.Fragment;
 
