@@ -1,7 +1,5 @@
 package com.fernandofgallego.circularrevealfragment.sample;
 
-import com.fernandofgallego.circularrevealfragment.OnFragmentTouched;
-
 import android.animation.Animator;
 import android.app.Activity;
 import android.app.Fragment;
@@ -143,7 +141,6 @@ public class MainActivity extends Activity implements OnFragmentTouched {
          * @return Animator object that will be used for the animation
          */
         public Animator prepareUnrevealAnimator(float cx, float cy) {
-
             int radius = getEnclosingCircleRadius(getView(), (int) cx, (int) cy);
             Animator anim = ViewAnimationUtils.createCircularReveal(getView(), (int) cx, (int) cy, radius, 0);
             anim.setInterpolator(new AccelerateInterpolator(2f));
@@ -170,7 +167,7 @@ public class MainActivity extends Activity implements OnFragmentTouched {
             Integer[] distances = new Integer[]{distanceTopLeft, distanceTopRight, distanceBottomLeft,
                     distanceBottomRight};
 
-            return Collections.min(Arrays.asList(distances));
+            return Collections.max(Arrays.asList(distances));
         }
     }
 }
